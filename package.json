@@ -1,0 +1,24 @@
+{
+  "name": "fortune-lib",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "compile": "tsc src/*.ts --outDir lib",
+    "clear": "rm lib/*.js",
+    "rebuild":"npm run clear& npm run compile",
+    "start": "npm run build:live",
+    "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
+  },
+  "keywords": ["fortune-tell"],
+  "author": "yuanyu",
+  "license": "ISC",
+  "devDependencies": {
+    "nodemon": "^1.18.5",
+    "ts-node": "^7.0.1",
+    "typescript": "^3.1.3"
+  },
+  "dependencies": {
+    "@types/es6-promise": "^3.3.0"
+  }
+}
