@@ -6,14 +6,18 @@
   "scripts": {
     "compile": "tsc src/*.ts --outDir lib",
     "clear": "rm lib/*.js",
-    "rebuild":"npm run clear& npm run compile",
+    "rebuild": "npm run clear& npm run compile",
+    "jsdoc": "jsdoc -c ./conf.json",
     "start": "npm run build:live",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
   },
-  "keywords": ["fortune-tell"],
+  "keywords": [
+    "fortune-tell"
+  ],
   "author": "yuanyu",
   "license": "ISC",
   "devDependencies": {
+    "jsdoc": "^3.5.5",
     "nodemon": "^1.18.5",
     "ts-node": "^7.0.1",
     "typescript": "^3.1.3"
