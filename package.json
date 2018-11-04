@@ -1,9 +1,9 @@
 {
   "name": "fortune-lib",
-  "version": "1.0.1-beta",
+  "version": "1.0.1-beta.01",
   "description": "",
   "main": "lib/index.js",
-  "types": "src/index.ts",
+  "types": "lib/index.d.ts",
   "scripts": {
     "compile": "tsc",
     "clear": "rm -rf lib",
