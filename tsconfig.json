@@ -1,7 +1,16 @@
 {
   "compilerOptions": {
-    "lib": ["es6", "dom"],
-    "outDir": "lib"
+    "target": "es5",
+    "module": "commonjs",
+    "lib": ["es2017", "es7", "es6", "dom"],
+    "declaration": true,
+    "outDir": "lib",
+    "strict": true,
+    "esModuleInterop": true
   },
-  "include": ["src"]
+  "include": ["src"],
+  "exclude": [
+    "node_modules",
+    "dist"
+  ]
 }

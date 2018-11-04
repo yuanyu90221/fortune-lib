@@ -29,4 +29,4 @@ const getNextReverseOrder = (symbol: string) => {
   return earth_symbol_reverse[currentIdx];
 };
 
-export {getNextOrder, getNextReverseOrder};
+export {getNextOrder, getNextReverseOrder, EARTH_SYMBOL};
