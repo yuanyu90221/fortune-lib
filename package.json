@@ -5,7 +5,7 @@
   "main": "lib/index.js",
   "types": "src/index.ts",
   "scripts": {
-    "compile": "tsc src/*.ts --outDir lib",
+    "compile": "tsc",
     "clear": "rm -rf lib",
     "rebuild": "npm run clear& npm run compile",
     "jsdoc": "jsdoc -c ./conf.json",
