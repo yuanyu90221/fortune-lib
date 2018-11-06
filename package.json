@@ -1,6 +1,6 @@
 {
   "name": "fortune-lib",
-  "version": "1.0.1-beta.02",
+  "version": "1.0.1-beta.03",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
