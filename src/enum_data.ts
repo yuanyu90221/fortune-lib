@@ -3,4 +3,7 @@ enum EARTH_SYMBOL{
   "未", "巳", "卯", "丑", "亥","酉"
 };
 
-export {EARTH_SYMBOL};
+enum SIX_RELATIVE_SYMBOL{
+  "兄","父","官","才","子"
+};
+export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL}; 
