@@ -1,4 +1,5 @@
 import {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL} from './enum_data';
+import {SYMBOL_CHAIN, transversal, antiVersal} from './symbolStruct';
 const earth_symbol_order = ["子", "寅", "辰", "午", "申", "戌"];
 const earth_symbol_reverse = ["未", "巳", "卯", "丑", "亥", "酉"];
 
@@ -29,4 +30,5 @@ const getNextReverseOrder = (symbol: string) => {
   return earth_symbol_reverse[currentIdx];
 };
 
-export {getNextOrder, getNextReverseOrder, EARTH_SYMBOL, SIX_RELATIVE_SYMBOL};
+export {getNextOrder, getNextReverseOrder, EARTH_SYMBOL, 
+  SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, transversal, antiVersal};
