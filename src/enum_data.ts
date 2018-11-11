@@ -3,6 +3,6 @@ enum EARTH_SYMBOL{
 };
 
 enum SIX_RELATIVE_SYMBOL{
-  "兄","父","官","才","子"
+  "父","兄","子","才","官"
 };
 export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL}; 

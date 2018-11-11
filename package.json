@@ -1,6 +1,6 @@
 {
   "name": "fortune-lib",
-  "version": "1.0.1-beta.03",
+  "version": "1.0.1-beta.04",
   "description": "",
   "main": "lib/index.js",
   "types": "lib/index.d.ts",
@@ -10,6 +10,7 @@
     "rebuild": "npm run clear& npm run compile",
     "jsdoc": "jsdoc -c ./conf.json",
     "start": "npm run build:live",
+    "demo":"nodemon --exec ./node_modules/.bin/ts-node -- ./src/demo.ts",
     "build:live": "nodemon --exec ./node_modules/.bin/ts-node -- ./src/index.ts"
   },
   "keywords": [
