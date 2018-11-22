@@ -13,10 +13,21 @@ declare enum EARTH_SYMBOL {
     "亥" = 11
 }
 declare enum SIX_RELATIVE_SYMBOL {
-    "兄" = 0,
-    "父" = 1,
-    "官" = 2,
+    "父" = 0,
+    "兄" = 1,
+    "子" = 2,
     "才" = 3,
-    "子" = 4
+    "官" = 4
 }
-export { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL };
+declare enum HEAVEN_SYMBOL {
+    "甲" = 0,
+    "乙" = 1,
+    "丙" = 2,
+    "戊" = 3,
+    "己" = 4,
+    "庚" = 5,
+    "辛" = 6,
+    "壬" = 7,
+    "癸" = 8
+}
+export { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL };

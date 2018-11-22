@@ -18,10 +18,12 @@ const transversal = (input: symbolWord, step: number) => {
   let counter = step;
   do {
     let symbol = current.getSymbol();
-    console.log(`${symbol}`);
+    // console.log(`${symbol}`);
     current = current.next();
     counter--;
   } while(current.hasOwnProperty('order') && counter>0);
+  // console.log(current.getSymbol());
+  return current;
 };
 
 
@@ -30,10 +32,12 @@ const antiVersal = (input: symbolWord, step: number) => {
   let counter = step;
   do {
     let symbol = current.getSymbol();
-    console.log(`${symbol}`);
+    // console.log(`${symbol}`);
     current = current.reverseOrder();
     counter--;
   } while(current.hasOwnProperty('reverse') && counter>0);
+  // console.log(current.getSymbol());
+  return current;
 };
 
 export {SYMBOL_CHAIN, antiVersal, transversal};

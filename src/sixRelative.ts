@@ -21,11 +21,10 @@ const transversal = (input: symbolWord, step: number) => {
   let counter = step;
   do {
     let symbol = current.getSymbol();
-    
     current = current.next();
-    console.log(`${symbol} 生 ${current.getSymbol()}`);
     counter--;
   } while(current.hasOwnProperty('order') && counter>0);
+  return current;
 };
 
 
@@ -34,11 +33,10 @@ const antiVersal = (input: symbolWord, step: number) => {
   let counter = step;
   do {
     let symbol = current.getSymbol();
-    
     current = current.reverseOrder();
-    console.log(`${symbol} 剋 ${current.getSymbol()}`);
     counter--;
   } while(current.hasOwnProperty('reverse') && counter>0);
+  return current;
 };
 
 export {SIX_REL, antiVersal, transversal};

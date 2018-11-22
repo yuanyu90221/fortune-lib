@@ -1,13 +1,7 @@
-import {SYMBOL_CHAIN, transversal, antiVersal} from './index';
-// import * as SIX_RELATIVE from './sixRelative';
-// import {SIX_REL} from './sixRelative';
 import {SIX_REL, SIX_RELATIVE} from './index';
-transversal(SYMBOL_CHAIN[0], 2);
-
-console.log(`========`);
-antiVersal(SYMBOL_CHAIN[0], 2);
 
 console.log(`六親`);
-
-SIX_RELATIVE.antiVersal(SIX_REL[0], 2);
-SIX_RELATIVE.transversal(SIX_REL[0], 5);
+let result = SIX_RELATIVE.antiVersal(SIX_REL[0], 1);
+console.log(SIX_REL[0].getSymbol()+ "剋" + result.getSymbol());
+let result1 = SIX_RELATIVE.transversal(SIX_REL[0], 1);
+console.log(SIX_REL[0].getSymbol()+ "生" + result1.getSymbol());

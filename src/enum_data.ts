@@ -5,4 +5,8 @@ enum EARTH_SYMBOL{
 enum SIX_RELATIVE_SYMBOL{
   "父","兄","子","才","官"
 };
-export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL}; 
+
+enum HEAVEN_SYMBOL {
+  "甲", "乙", "丙", "戊", "己", "庚", "辛", "壬", "癸"
+};
+export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL}; 
