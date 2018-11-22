@@ -20,7 +20,6 @@ const transversal = (input: symbolWord, step: number) => {
   let current = input;
   let counter = step;
   do {
-    let symbol = current.getSymbol();
     current = current.next();
     counter--;
   } while(current.hasOwnProperty('order') && counter>0);
@@ -32,7 +31,6 @@ const antiVersal = (input: symbolWord, step: number) => {
   let current = input;
   let counter = step;
   do {
-    let symbol = current.getSymbol();
     current = current.reverseOrder();
     counter--;
   } while(current.hasOwnProperty('reverse') && counter>0);

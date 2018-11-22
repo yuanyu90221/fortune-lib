@@ -12,7 +12,12 @@ SYMBOL_CHAIN.forEach((symbol, index)=>{
   symbol.setOrder(SYMBOL_CHAIN[increase]);
   symbol.setReverse(SYMBOL_CHAIN[decrease]);
 });
-
+/**
+ * @description transversal 
+ * 
+ * @param {symbolWord} input 
+ * @param {number} step 
+ */
 const transversal = (input: symbolWord, step: number) => {
   let current = input;
   let counter = step;
@@ -26,17 +31,19 @@ const transversal = (input: symbolWord, step: number) => {
   return current;
 };
 
-
+/**
+ * @description antiVersal
+ * 
+ * @param {symbolWord} input 
+ * @param {number} step 
+ */
 const antiVersal = (input: symbolWord, step: number) => {
   let current = input;
   let counter = step;
   do {
-    let symbol = current.getSymbol();
-    // console.log(`${symbol}`);
     current = current.reverseOrder();
     counter--;
   } while(current.hasOwnProperty('reverse') && counter>0);
-  // console.log(current.getSymbol());
   return current;
 };
 
