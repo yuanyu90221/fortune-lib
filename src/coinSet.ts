@@ -61,11 +61,23 @@ export default class CoinSet {
     let realSymbol: CoinSymbol = this.coinSymbol;
     switch(this.coinSymbol) {
       case CoinSymbol.O:
+        return CoinSymbol["|"];
+      case CoinSymbol.X:
+        return CoinSymbol["||"];
+      default:
+      return realSymbol;
+    }
+  }
+
+  public getMoveSymbol() {
+    let realSymbol: CoinSymbol = this.coinSymbol;
+    switch(this.coinSymbol) {
+      case CoinSymbol.O: 
         return CoinSymbol["||"];
       case CoinSymbol.X:
         return CoinSymbol["|"];
       default:
-      return realSymbol;
+        return realSymbol; 
     }
   }
 }

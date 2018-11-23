@@ -25,5 +25,6 @@ export default class CoinSet {
     getSymbol(): CoinSymbol;
     getFaceSet(): FaceSymbol[];
     getRealSymbol(): CoinSymbol.X | CoinSymbol.| | CoinSymbol;
+    getMoveSymbol(): CoinSymbol.X | CoinSymbol.| | CoinSymbol;
 }
 export { CoinSymbol, FaceSymbol };

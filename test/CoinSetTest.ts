@@ -9,10 +9,10 @@ test('CoinSetTest', ()=> {
   let UUUSet = new CoinSet(UUU);
   let DDD = [FaceSymbol.FaceDown, FaceSymbol.FaceDown, FaceSymbol.FaceDown];
   let DDDSet = new CoinSet(DDD);
-  console.log(`input: `, DDUSet.getFaceSet(), `outputSymbol: `, CoinSymbol[DDUSet.getSymbol()]);
-  console.log(`input: `, UDUSet.getFaceSet(), `outputSymbol: `, CoinSymbol[UDUSet.getSymbol()]);
-  console.log(`input: `, DDDSet.getFaceSet(), `outputSymbol: `, CoinSymbol[DDDSet.getSymbol()]);
-  console.log(`input: `, UUUSet.getFaceSet(), `outputSymbol: `, CoinSymbol[UUUSet.getSymbol()]);
+  console.log(`input: `, DDUSet.getFaceSet(), `outputSymbol: `, CoinSymbol[DDUSet.getSymbol()], ` realSymbol: `, CoinSymbol[DDUSet.getRealSymbol()], ` moveSymbol: `, CoinSymbol[DDUSet.getMoveSymbol()]);
+  console.log(`input: `, UDUSet.getFaceSet(), `outputSymbol: `, CoinSymbol[UDUSet.getSymbol()], ` realSymbol: `, CoinSymbol[UDUSet.getRealSymbol()], ` moveSymbol: `, CoinSymbol[UDUSet.getMoveSymbol()]);
+  console.log(`input: `, DDDSet.getFaceSet(), `outputSymbol: `, CoinSymbol[DDDSet.getSymbol()], ` realSymbol: `, CoinSymbol[DDDSet.getRealSymbol()], ` moveSymbol: `, CoinSymbol[DDDSet.getMoveSymbol()]);
+  console.log(`input: `, UUUSet.getFaceSet(), `outputSymbol: `, CoinSymbol[UUUSet.getSymbol()], ` realSymbol: `, CoinSymbol[UUUSet.getRealSymbol()], ` moveSymbol: `, CoinSymbol[UUUSet.getMoveSymbol()]);
   expect(CoinSymbol[DDUSet.getSymbol()]).toEqual(CoinSymbol[CoinSymbol["|"]]);
   expect(CoinSymbol[UDUSet.getSymbol()]).toEqual(CoinSymbol[CoinSymbol["||"]]);
   expect(CoinSymbol[UUUSet.getSymbol()]).toEqual(CoinSymbol[CoinSymbol.O]);
