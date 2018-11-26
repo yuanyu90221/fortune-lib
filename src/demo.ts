@@ -15,9 +15,8 @@ let result3 = FIVE_ELM.transversal(FIVE_EL[0], 1);
 console.log(FIVE_EL[0].getSymbol()+ "生" + result3.getSymbol());
 
 let result4RES = new FourRES([CoinSymbol["||"], CoinSymbol["|"], CoinSymbol["||"]]);
-result4RES.getEarthSYM().forEach(item=>{
-  console.log(EARTH_SYMBOL[item]);
-});
-// console.log(result4RES.getEarthSYM());
+console.log(result4RES.getEarthSymBolSet());
 console.log(FIVE_ELEMENT[result4RES.getMainElement()]);
 console.log(result4RES.getSymBolSet());
+console.log(result4RES.getSymBolSetLabel());
+console.log(result4RES.checkPos()?'四陽':'四陰');

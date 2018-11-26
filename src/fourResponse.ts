@@ -51,42 +51,42 @@ export default class FourRES {
         this.mainElement = FIVE_ELEMENT.金;
         this.isPos = true;
         break;
-      case CoinSymbol["||"] + "" + CoinSymbol["|"] + " "+CoinSymbol["||"]:
+      case CoinSymbol["||"] + "" + CoinSymbol["|"] + ""+CoinSymbol["||"]:
         this.earthSYM.push(EARTH_SYMBOL.午);
         this.earthSYM.push(EARTH_SYMBOL.辰);
         this.earthSYM.push(EARTH_SYMBOL.寅);
         this.mainElement = FIVE_ELEMENT.水;
         this.isPos = true;
         break;
-      case CoinSymbol["|"] + "" + CoinSymbol["|"] + " "+CoinSymbol["||"]:
+      case CoinSymbol["|"] + "" + CoinSymbol["|"] + ""+CoinSymbol["||"]:
         this.earthSYM.push(EARTH_SYMBOL.辰);
         this.earthSYM.push(EARTH_SYMBOL.寅);
         this.earthSYM.push(EARTH_SYMBOL.子);
         this.mainElement = FIVE_ELEMENT.木;
         this.isPos = true;
         break;
-      case CoinSymbol["|"] + "" + CoinSymbol["|"] + " "+CoinSymbol["|"]:
+      case CoinSymbol["|"] + "" + CoinSymbol["|"] + ""+CoinSymbol["|"]:
         this.earthSYM.push(EARTH_SYMBOL.辰);
         this.earthSYM.push(EARTH_SYMBOL.寅);
         this.earthSYM.push(EARTH_SYMBOL.子);
         this.mainElement = FIVE_ELEMENT.金;
         this.isPos = true;
         break;
-      case CoinSymbol["||"] + "" + CoinSymbol["|"] + " "+CoinSymbol["|"]:
+      case CoinSymbol["||"] + "" + CoinSymbol["|"] + ""+CoinSymbol["|"]:
         this.earthSYM.push(EARTH_SYMBOL.丑);
         this.earthSYM.push(EARTH_SYMBOL.卯);
         this.earthSYM.push(EARTH_SYMBOL.巳);
         this.mainElement = FIVE_ELEMENT.金;
         this.isPos = false;
         break;
-      case CoinSymbol["|"] + "" + CoinSymbol["||"] + " "+CoinSymbol["|"]:
+      case CoinSymbol["|"] + "" + CoinSymbol["||"] + ""+CoinSymbol["|"]:
         this.earthSYM.push(EARTH_SYMBOL.亥);
         this.earthSYM.push(EARTH_SYMBOL.酉);
         this.earthSYM.push(EARTH_SYMBOL.卯);
         this.mainElement = FIVE_ELEMENT.火;
         this.isPos = false;
         break;
-      case CoinSymbol["|"] + "" + CoinSymbol["|"] + " "+CoinSymbol["||"]:
+      case CoinSymbol["|"] + "" + CoinSymbol["|"] + ""+CoinSymbol["||"]:
         this.earthSYM.push(EARTH_SYMBOL.酉);
         this.earthSYM.push(EARTH_SYMBOL.亥);
         this.earthSYM.push(EARTH_SYMBOL.丑);
@@ -94,9 +94,9 @@ export default class FourRES {
         this.isPos = false;
         break;
       default:
-        this.earthSYM.push(EARTH_SYMBOL.午);
-        this.earthSYM.push(EARTH_SYMBOL.辰);
-        this.earthSYM.push(EARTH_SYMBOL.寅);
+        this.earthSYM.push(EARTH_SYMBOL.卯);
+        this.earthSYM.push(EARTH_SYMBOL.巳);
+        this.earthSYM.push(EARTH_SYMBOL.未);
         this.mainElement = FIVE_ELEMENT.土;
         this.isPos = false;
         break;
@@ -107,6 +107,20 @@ export default class FourRES {
     return this.symbolSet;
   }
 
+  public getSymBolSetLabel(): string {
+    let symbolSetString = this.symbolSet.map(item=> CoinSymbol[item]);
+    return symbolSetString.reduce((itemCur, itemNext) => {
+      return itemCur + '->' +  itemNext;
+    });
+  }
+
+  public getEarthSymBolSet(): string {
+    let symBolSetString = this.earthSYM.map(item=>{ return EARTH_SYMBOL[item]});
+    return symBolSetString.reduce((itemCur, itemNext)=>{
+      return itemCur + itemNext;
+    });
+  }
+
   public getEarthSYM(): EARTH_SYMBOL[] {
     return this.earthSYM;
   }
@@ -114,7 +128,7 @@ export default class FourRES {
   public getMainElement(): FIVE_ELEMENT {
     return this.mainElement;
   }
-  
+
   public checkPos():boolean {
     return this.isPos;
   }
