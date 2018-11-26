@@ -30,4 +30,11 @@ declare enum HEAVEN_SYMBOL {
     "壬" = 7,
     "癸" = 8
 }
-export { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL };
+declare enum FIVE_ELEMENT {
+    "金" = 0,
+    "水" = 1,
+    "木" = 2,
+    "火" = 3,
+    "土" = 4
+}
+export { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT };

@@ -2,6 +2,8 @@ import {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL} from './enum_data';
 import {SYMBOL_CHAIN, transversal, antiVersal} from './symbolStruct';
 import {SIX_REL} from './sixRelative';
 import * as SIX_RELATIVE from './sixRelative';
+import {FIVE_EL} from './fiveElement';
+import * as FIVE_ELM from './fiveElement';
 import {CoinSymbol, FaceSymbol} from './coinSet';
 import CoinSet from './coinSet';
 const earth_symbol_order = ["子", "寅", "辰", "午", "申", "戌"];
@@ -36,4 +38,4 @@ const getNextReverseOrder = (symbol: string) => {
 
 export {getNextOrder, getNextReverseOrder, EARTH_SYMBOL, 
   SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, transversal, antiVersal,
-  SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol};
+  SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL};

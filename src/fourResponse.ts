@@ -25,6 +25,8 @@
  * 
  *
  */
+import CoinSet from './coinSet';
+import {EARTH_SYMBOL} from './enum_data';
 
 
 

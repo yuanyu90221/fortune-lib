@@ -9,4 +9,8 @@ enum SIX_RELATIVE_SYMBOL{
 enum HEAVEN_SYMBOL {
   "甲", "乙", "丙", "戊", "己", "庚", "辛", "壬", "癸"
 };
-export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL}; 
+
+enum FIVE_ELEMENT {
+  "金","水","木","火","土"
+};
+export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT}; 
