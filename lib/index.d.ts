@@ -8,6 +8,7 @@ import { CoinSymbol, FaceSymbol } from './coinSet';
 import CoinSet from './coinSet';
 import FourRES from './fourResponse';
 import BaseSet from './baseSet';
+import * as EARTH_FIVE_MAP from './earthFiveMap';
 /**
  * @description getNextOrder
  *
@@ -20,4 +21,4 @@ declare const getNextOrder: (symbol: string) => string;
  * @param {string} symbol
  */
 declare const getNextReverseOrder: (symbol: string) => string;
-export { getNextOrder, getNextReverseOrder, EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, transversal, antiVersal, SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL, FourRES, FIVE_ELEMENT, BaseSet };
+export { getNextOrder, getNextReverseOrder, EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, transversal, antiVersal, SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL, FourRES, FIVE_ELEMENT, BaseSet, EARTH_FIVE_MAP };
