@@ -30,9 +30,13 @@ import { EARTH_SYMBOL, FIVE_ELEMENT } from './enum_data';
 export default class FourRES {
     private symbolSet;
     private earthSYM;
+    private fiveElements;
     private mainElement;
     private isPos;
     constructor(symbolSet: CoinSymbol[]);
+    setFiveEles(): void;
+    getFiveEles(): FIVE_ELEMENT[];
+    getFiveElesSYM(): string;
     classify(symbolSet: CoinSymbol[]): void;
     getSymBolSet(): CoinSymbol[];
     getSymBolSetLabel(): string;

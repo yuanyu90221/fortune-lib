@@ -28,17 +28,36 @@
 import {CoinSymbol} from './coinSet';
 import {FIVE_EL} from './fiveElement';
 import {EARTH_SYMBOL, FIVE_ELEMENT} from './enum_data';
-
+import * as EARTH_FIVE_MAP from './earthFiveMap';
 export default class FourRES {
   private symbolSet: CoinSymbol[];
   private earthSYM: EARTH_SYMBOL[] = [];
+  private fiveElements: FIVE_ELEMENT[] = [];
   private mainElement: FIVE_ELEMENT = FIVE_ELEMENT.金;
   private isPos: boolean = false;
   constructor(symbolSet: CoinSymbol[]) {
     this.symbolSet = [...symbolSet];
     this.classify(symbolSet);
+    this.setFiveEles();
   }
 
+  setFiveEles() {
+    this.fiveElements = this.earthSYM.map(sym=> {
+      return EARTH_FIVE_MAP.getFiveFromMap(sym);
+    });
+  }
+
+  public getFiveEles(): FIVE_ELEMENT[] {
+    return this.fiveElements;
+  } 
+
+  public getFiveElesSYM(): string {
+    let fiveElementsStrs = this.fiveElements.map(item=>FIVE_ELEMENT[item]);
+    return fiveElementsStrs.reduce((curSYM, nextSYM)=>{
+      return curSYM+"->"+nextSYM;
+    });
+  }
+  
   classify(symbolSet: CoinSymbol[]) {
     let [first, second, third] = symbolSet;
     let conditionText = first + "" + second + "" + third;

@@ -9,10 +9,12 @@ test('TestBaseFlow', ()=>{
   console.log(bsSet.getBasicSet().getEarthSymBolSet());
   console.log(bsSet.getBasicSet().getSymBolSetLabel());
   console.log(FIVE_ELEMENT[bsSet.getBasicSet().getMainElement()]);
+  console.log(bsSet.getBasicSet().getFiveElesSYM());
   let movedSet = bsSet.getMovedSet();
   if (movedSet!=null) {
     console.log(movedSet.getEarthSymBolSet());
     console.log(movedSet.getSymBolSetLabel());
     console.log(FIVE_ELEMENT[movedSet.getMainElement()]);
+    console.log(movedSet.getFiveElesSYM());
   }
 });

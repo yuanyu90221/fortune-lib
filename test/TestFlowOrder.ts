@@ -14,7 +14,9 @@ test('testFlow', ()=> {
   console.log(fourRSObj.getEarthSymBolSet());
   console.log(FIVE_ELEMENT[fourRSObj.getMainElement()]);
   console.log(fourRSObj.getSymBolSetLabel());
+  console.log(fourRSObj.getFiveElesSYM());
   console.log(fourRSOb.getEarthSymBolSet());
   console.log(FIVE_ELEMENT[fourRSOb.getMainElement()]);
   console.log(fourRSOb.getSymBolSetLabel());
+  console.log(fourRSOb.getFiveElesSYM());
 });
