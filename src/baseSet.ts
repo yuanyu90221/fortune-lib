@@ -25,4 +25,24 @@ export default class BaseSet {
     return first.getRealSymbol()!==first.getMoveSymbol() || second.getRealSymbol()!==second.getMoveSymbol() 
     || third.getRealSymbol()!==third.getMoveSymbol(); 
   }
+
+  public getOrigSetSymbol(): CoinSymbol[] {
+    return this.orgSetSymbol;
+  }
+
+  public getRealSetSymbol(): CoinSymbol[] {
+    return this.realSetSymbol;
+  }
+
+  public getMovedSetSymbol(): CoinSymbol[] {
+    return this.movedSetSymbol;
+  }
+
+  public getBasicSet(): FourRES{
+    return this.basicSet;
+  }
+
+  public getMovedSet(): FourRES|null {
+    return this.movedSet;
+  }
 }
