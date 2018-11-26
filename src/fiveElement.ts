@@ -36,4 +36,4 @@ const antiVersal = (input: symbolWord, step: number) => {
   return current;
 };
 
-export {FIVE_EL, transversal, antiVersal};
+export {FIVE_EL, transversal, antiVersal, FIVE_ELEMENT};

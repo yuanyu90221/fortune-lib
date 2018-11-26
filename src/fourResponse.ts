@@ -25,8 +25,97 @@
  * 
  *
  */
-import CoinSet from './coinSet';
-import {EARTH_SYMBOL} from './enum_data';
+import {CoinSymbol} from './coinSet';
+import {FIVE_EL} from './fiveElement';
+import {EARTH_SYMBOL, FIVE_ELEMENT} from './enum_data';
 
+export default class FourRES {
+  private symbolSet: CoinSymbol[];
+  private earthSYM: EARTH_SYMBOL[] = [];
+  private mainElement: FIVE_ELEMENT = FIVE_ELEMENT.金;
+  private isPos: boolean = false;
+  constructor(symbolSet: CoinSymbol[]) {
+    this.symbolSet = [...symbolSet];
+    this.classify(symbolSet);
+  }
 
+  classify(symbolSet: CoinSymbol[]) {
+    let [first, second, third] = symbolSet;
+    let conditionText = first + "" + second + "" + third;
+    switch(conditionText) {
+      
+      case CoinSymbol["|"] + "" + CoinSymbol["||"] + " "+CoinSymbol["||"]:
+        this.earthSYM.push(EARTH_SYMBOL.申);
+        this.earthSYM.push(EARTH_SYMBOL.午);
+        this.earthSYM.push(EARTH_SYMBOL.酉);
+        this.mainElement = FIVE_ELEMENT.金;
+        this.isPos = true;
+        break;
+      case CoinSymbol["||"] + "" + CoinSymbol["|"] + " "+CoinSymbol["||"]:
+        this.earthSYM.push(EARTH_SYMBOL.午);
+        this.earthSYM.push(EARTH_SYMBOL.辰);
+        this.earthSYM.push(EARTH_SYMBOL.寅);
+        this.mainElement = FIVE_ELEMENT.水;
+        this.isPos = true;
+        break;
+      case CoinSymbol["|"] + "" + CoinSymbol["|"] + " "+CoinSymbol["||"]:
+        this.earthSYM.push(EARTH_SYMBOL.辰);
+        this.earthSYM.push(EARTH_SYMBOL.寅);
+        this.earthSYM.push(EARTH_SYMBOL.子);
+        this.mainElement = FIVE_ELEMENT.木;
+        this.isPos = true;
+        break;
+      case CoinSymbol["|"] + "" + CoinSymbol["|"] + " "+CoinSymbol["|"]:
+        this.earthSYM.push(EARTH_SYMBOL.辰);
+        this.earthSYM.push(EARTH_SYMBOL.寅);
+        this.earthSYM.push(EARTH_SYMBOL.子);
+        this.mainElement = FIVE_ELEMENT.金;
+        this.isPos = true;
+        break;
+      case CoinSymbol["||"] + "" + CoinSymbol["|"] + " "+CoinSymbol["|"]:
+        this.earthSYM.push(EARTH_SYMBOL.丑);
+        this.earthSYM.push(EARTH_SYMBOL.卯);
+        this.earthSYM.push(EARTH_SYMBOL.巳);
+        this.mainElement = FIVE_ELEMENT.金;
+        this.isPos = false;
+        break;
+      case CoinSymbol["|"] + "" + CoinSymbol["||"] + " "+CoinSymbol["|"]:
+        this.earthSYM.push(EARTH_SYMBOL.亥);
+        this.earthSYM.push(EARTH_SYMBOL.酉);
+        this.earthSYM.push(EARTH_SYMBOL.卯);
+        this.mainElement = FIVE_ELEMENT.火;
+        this.isPos = false;
+        break;
+      case CoinSymbol["|"] + "" + CoinSymbol["|"] + " "+CoinSymbol["||"]:
+        this.earthSYM.push(EARTH_SYMBOL.酉);
+        this.earthSYM.push(EARTH_SYMBOL.亥);
+        this.earthSYM.push(EARTH_SYMBOL.丑);
+        this.mainElement = FIVE_ELEMENT.水;
+        this.isPos = false;
+        break;
+      default:
+        this.earthSYM.push(EARTH_SYMBOL.午);
+        this.earthSYM.push(EARTH_SYMBOL.辰);
+        this.earthSYM.push(EARTH_SYMBOL.寅);
+        this.mainElement = FIVE_ELEMENT.土;
+        this.isPos = false;
+        break;
+    }
+  }
 
+  public getSymBolSet(): CoinSymbol[] {
+    return this.symbolSet;
+  }
+
+  public getEarthSYM(): EARTH_SYMBOL[] {
+    return this.earthSYM;
+  }
+
+  public getMainElement(): FIVE_ELEMENT {
+    return this.mainElement;
+  }
+  
+  public checkPos():boolean {
+    return this.isPos;
+  }
+}
