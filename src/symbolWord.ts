@@ -1,6 +1,6 @@
 export default class symbolWord {
 
-  private symbol: String = '';
+  private symbol: string = '';
   private reverse: any;
   private order: any;
   constructor({symbol='', reverse = {}, order = {}}) {

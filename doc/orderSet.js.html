@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="utf-8">
-    <title>JSDoc: Home</title>
+    <title>JSDoc: Source: orderSet.js</title>
 
     <script src="scripts/prettify/prettify.js"> </script>
     <script src="scripts/prettify/lang-css.js"> </script>
@@ -17,32 +17,42 @@
 
 <div id="main">
 
-    <h1 class="page-title">Home</h1>
+    <h1 class="page-title">Source: orderSet.js</h1>
 
     
 
 
 
     
-
-
-    <h3> </h3>
-
-
-
-
-
-
-
-
-
-
-    
-
-
-
-
-
+    <section>
+        <article>
+            <pre class="prettyprint source linenums"><code>"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+var enum_data_1 = require("./enum_data");
+exports.EARTH_SYMBOL_ORDER = enum_data_1.EARTH_SYMBOL_ORDER;
+exports.EARTH_SYMBOL_REVERSE = enum_data_1.EARTH_SYMBOL_REVERSE;
+var ENUM_LEN = 6;
+/**
+ * @description getNextOrder
+ *
+ * @param {EARTH_SYMBOL_ORDER} symbol
+ */
+var getNextOrder = function (symbol) {
+    return (++symbol) % ENUM_LEN;
+};
+exports.getNextOrder = getNextOrder;
+/**
+ * @description getNextReverseOrder
+ *
+ * @param {EARTH_SYMBOL_REVERSE} symbol
+ */
+var getNextReverseOrder = function (symbol) {
+    return (--symbol + ENUM_LEN) % ENUM_LEN;
+};
+exports.getNextReverseOrder = getNextReverseOrder;
+</code></pre>
+        </article>
+    </section>
 
 
 

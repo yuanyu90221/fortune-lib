@@ -13,4 +13,12 @@ enum HEAVEN_SYMBOL {
 enum FIVE_ELEMENT {
   "金","水","木","火","土"
 };
-export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT}; 
+
+enum EARTH_SYMBOL_ORDER  {
+  "子", "寅", "辰", "午", "申", "戌"
+};
+enum EARTH_SYMBOL_REVERSE  {
+  "未", "巳", "卯", "丑", "亥", "酉" 
+};
+
+export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE}; 

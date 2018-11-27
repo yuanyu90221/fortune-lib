@@ -37,4 +37,20 @@ declare enum FIVE_ELEMENT {
     "火" = 3,
     "土" = 4
 }
-export { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT };
+declare enum EARTH_SYMBOL_ORDER {
+    "子" = 0,
+    "寅" = 1,
+    "辰" = 2,
+    "午" = 3,
+    "申" = 4,
+    "戌" = 5
+}
+declare enum EARTH_SYMBOL_REVERSE {
+    "未" = 0,
+    "巳" = 1,
+    "卯" = 2,
+    "丑" = 3,
+    "亥" = 4,
+    "酉" = 5
+}
+export { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE };

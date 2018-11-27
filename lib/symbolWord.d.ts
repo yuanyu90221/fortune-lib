@@ -8,7 +8,7 @@ export default class symbolWord {
         order?: {} | undefined;
     });
     next(): any;
-    getSymbol(): String;
+    getSymbol(): string;
     reverseOrder(): any;
     setOrder(order?: {}): void;
     setReverse(reverse?: {}): void;
