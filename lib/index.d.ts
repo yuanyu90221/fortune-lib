@@ -12,4 +12,5 @@ import BaseSet from './baseSet';
 import * as EARTH_FIVE_MAP from './earthFiveMap';
 import { EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE } from './orderSet';
 import * as OrderSetUtil from './orderSet';
-export { EARTH_SYMBOL, OrderSetUtil, SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, symUtil, SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL, FourRES, FIVE_ELEMENT, BaseSet, EARTH_FIVE_MAP, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE };
+import UpBaseSet from './upBaseSet';
+export { EARTH_SYMBOL, OrderSetUtil, UpBaseSet, SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, symUtil, SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL, FourRES, FIVE_ELEMENT, BaseSet, EARTH_FIVE_MAP, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE };

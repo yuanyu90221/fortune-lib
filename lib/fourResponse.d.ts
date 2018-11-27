@@ -34,6 +34,7 @@ export default class FourRES {
     private mainElement;
     private isPos;
     constructor(symbolSet: CoinSymbol[]);
+    setEarthSYM(earthSYMs: EARTH_SYMBOL[]): void;
     setFiveEles(): void;
     getFiveEles(): FIVE_ELEMENT[];
     getFiveElesSYM(): string;
