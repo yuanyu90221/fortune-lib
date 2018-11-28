@@ -44,6 +44,7 @@ export default class FourRES {
   public setEarthSYM(earthSYMs: EARTH_SYMBOL[]){
     this.earthSYM = [];
     this.earthSYM = [...earthSYMs];
+    this.setFiveEles();
   }
 
   public setFiveEles() {

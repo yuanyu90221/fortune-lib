@@ -8,5 +8,6 @@ test('UpBaseSetTest', ()=>{
   let upBsSet = new UpBaseSet(orgSet);
   console.log(upBsSet.getBasicSet().getEarthSymBolSet());
   console.log(upBsSet.getBasicSet().getSymBolSetLabel());
+  console.log(upBsSet.getBasicSet().getFiveElesSYM());
   // console.log();
 });
