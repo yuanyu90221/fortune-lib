@@ -42,7 +42,7 @@ export default class FourRES {
   }
 
   public setEarthSYM(earthSYMs: EARTH_SYMBOL[]){
-    this.earthSYM.splice(0, 3);
+    this.earthSYM = [];
     this.earthSYM = [...earthSYMs];
   }
 
@@ -68,10 +68,10 @@ export default class FourRES {
     let conditionText = first + "" + second + "" + third;
     switch(conditionText) {
       
-      case CoinSymbol["|"] + "" + CoinSymbol["||"] + " "+CoinSymbol["||"]:
+      case CoinSymbol["|"] + "" + CoinSymbol["||"] + ""+CoinSymbol["||"]:
         this.earthSYM.push(EARTH_SYMBOL.申);
         this.earthSYM.push(EARTH_SYMBOL.午);
-        this.earthSYM.push(EARTH_SYMBOL.酉);
+        this.earthSYM.push(EARTH_SYMBOL.辰);
         this.mainElement = FIVE_ELEMENT.金;
         this.isPos = true;
         break;

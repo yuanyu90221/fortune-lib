@@ -1,7 +1,7 @@
-import FourRES from './fourResponse';
-import { CoinSymbol } from './coinSet';
 import { EARTH_SYMBOL } from './enum_data';
-export default class upBaseSet extends FourRES {
-    constructor(symbolSet: CoinSymbol[]);
+import CoinSet from './coinSet';
+import BaseSet from './baseSet';
+export default class upBaseSet extends BaseSet {
+    constructor(orgSet: CoinSet[]);
     getNext3EarthSYMs(first: EARTH_SYMBOL): EARTH_SYMBOL[];
 }

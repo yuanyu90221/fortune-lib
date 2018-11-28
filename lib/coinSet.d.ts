@@ -13,6 +13,12 @@ declare enum CoinSymbol {
     '||' = 2,
     'O' = 3
 }
+/**
+ * 銅錢 正反:
+ *
+ * FaceDown: 反
+ * FaceUp: 正
+ */
 declare enum FaceSymbol {
     FaceDown = 0,
     FaceUp = 1

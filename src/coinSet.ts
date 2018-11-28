@@ -13,6 +13,12 @@ enum CoinSymbol {
   '||',
   'O'
 };
+/**
+ * 銅錢 正反:
+ * 
+ * FaceDown: 反
+ * FaceUp: 正
+ */
 enum FaceSymbol {
   FaceDown,
   FaceUp
