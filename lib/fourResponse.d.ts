@@ -26,7 +26,7 @@
  *
  */
 import { CoinSymbol } from './coinSet';
-import { EARTH_SYMBOL, FIVE_ELEMENT } from './enum_data';
+import { EARTH_SYMBOL, FIVE_ELEMENT, SIX_RELATIVE_SYMBOL } from './enum_data';
 export default class FourRES {
     private symbolSet;
     private earthSYM;
@@ -39,6 +39,9 @@ export default class FourRES {
     setFiveEles(): void;
     getFiveEles(): FIVE_ELEMENT[];
     getFiveElesSYM(): string[];
+    setupSixRes(checkSixMap: any): void;
+    getSixResSymbol(): SIX_RELATIVE_SYMBOL[];
+    getSixResSymLabel(): string[];
     classify(symbolSet: CoinSymbol[]): void;
     getSymBolSet(): CoinSymbol[];
     getSymBolSetLabel(): string[];

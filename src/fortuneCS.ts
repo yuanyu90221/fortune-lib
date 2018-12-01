@@ -2,7 +2,7 @@ import BaseSet from './baseSet';
 import upBaseSet from './upBaseSet';
 import CoinSet from './coinSet';
 import {CoinSymbol} from './coinSet';
-import {FIVE_ELEMENT} from './enum_data';
+import {FIVE_ELEMENT, SIX_RELATIVE_SYMBOL} from './enum_data';
 import FourRES  from './fourResponse';
 
 export default class FortuneCS {
@@ -12,6 +12,7 @@ export default class FortuneCS {
   private corEventNum: number = 0;
   private isReturnElement = false;
   private mainElement: FIVE_ELEMENT = FIVE_ELEMENT.金;
+  private checkSIXmap: any = {};
   constructor(coinSet: CoinSet[][]){
     let [upPart, downPart] = coinSet;
     this.upbsSet = new upBaseSet(upPart);
@@ -94,6 +95,20 @@ export default class FortuneCS {
         this.mainElement = computeFourRes.getMainElement();
         break;
     }
+    this.setupSixMap(this.mainElement);
+    this.bsSet.getBasicSet().setupSixRes(this.checkSIXmap);
+    this.upbsSet.getBasicSet().setupSixRes(this.checkSIXmap);
+    this.setMovedSixRes(this.bsSet);
+    this.setMovedSixRes(this.upbsSet);
+  }
+
+  public setMovedSixRes(bsSet: BaseSet) {
+    if (this.bsSet.checkMoved()) {
+      let bsMovedSet = this.bsSet.getMovedSet();
+      if (bsMovedSet!=null){
+        bsMovedSet.setupSixRes(this.checkSIXmap);
+      }
+    }
   }
 
   public switchSymbol(inputSymbols: CoinSymbol[]): CoinSymbol[] {
@@ -107,6 +122,13 @@ export default class FortuneCS {
     });
   }
 
+  public setupSixMap(startElem: FIVE_ELEMENT) {
+    let startSix:SIX_RELATIVE_SYMBOL = SIX_RELATIVE_SYMBOL.兄;
+    let startFive: FIVE_ELEMENT = startElem;
+    for (let idx =0; idx < 5; idx++) {
+      this.checkSIXmap[(startFive+idx)%5] = (startSix+idx)%5; 
+    } 
+  }
   public getMainElement(): FIVE_ELEMENT{
     return this.mainElement;
   }

@@ -12,12 +12,16 @@ test('testFourtuneCS', ()=> {
   let bsSet = [coSet3, coSet2, coSet1];
   let fortuneResult: FortuneCS = new FortuneCS([upbsSet, bsSet]);
   console.log(fortuneResult.getUpBsSet().getBasicSet().getEarthSymBolSet());
+  console.log(fortuneResult.getUpBsSet().getBasicSet().getSixResSymLabel());
   console.log(FIVE_ELEMENT[fortuneResult.getMainElement()]);
   console.log(fortuneResult.getbsSet().getBasicSet().getEarthSymBolSet());
+  console.log(fortuneResult.getbsSet().getBasicSet().getSixResSymLabel());
   let bsMoveSet = fortuneResult.getbsSet().getMovedSet();
   if (bsMoveSet!=null) {
     console.log(bsMoveSet.getEarthSymBolSet());
+    console.log(bsMoveSet.getSixResSymLabel());
   }
   console.log('世:' + fortuneResult.getEventNum());
   console.log('應:' + fortuneResult.getCorEventNum());
+  
 });

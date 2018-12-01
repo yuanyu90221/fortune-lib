@@ -10,11 +10,14 @@ export default class FortuneCS {
     private corEventNum;
     private isReturnElement;
     private mainElement;
+    private checkSIXmap;
     constructor(coinSet: CoinSet[][]);
     getUpBsSet(): upBaseSet;
     getbsSet(): BaseSet;
     findEventPair(): void;
+    setMovedSixRes(bsSet: BaseSet): void;
     switchSymbol(inputSymbols: CoinSymbol[]): CoinSymbol[];
+    setupSixMap(startElem: FIVE_ELEMENT): void;
     getMainElement(): FIVE_ELEMENT;
     getEventNum(): number;
     getCorEventNum(): number;

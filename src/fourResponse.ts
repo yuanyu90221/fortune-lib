@@ -63,7 +63,24 @@ export default class FourRES {
     return fiveElementsStrs;
   }
   
-  classify(symbolSet: CoinSymbol[]) {
+  public setupSixRes(checkSixMap: any) {
+    this.sixResSymbol = this.fiveElements.map(item=>{
+      let result:SIX_RELATIVE_SYMBOL = checkSixMap[item];
+      return result;
+    });
+  }
+
+  public getSixResSymbol():SIX_RELATIVE_SYMBOL[] {
+    return this.sixResSymbol;
+  }
+
+  public getSixResSymLabel(): string[] {
+    return this.sixResSymbol.map(item=>{
+      return SIX_RELATIVE_SYMBOL[item];
+    });
+  }
+  
+  public classify(symbolSet: CoinSymbol[]) {
     let [first, second, third] = symbolSet;
     let conditionText = first + "" + second + "" + third;
     switch(conditionText) {
