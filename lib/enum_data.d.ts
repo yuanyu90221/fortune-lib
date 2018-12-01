@@ -23,12 +23,13 @@ declare enum HEAVEN_SYMBOL {
     "甲" = 0,
     "乙" = 1,
     "丙" = 2,
-    "戊" = 3,
-    "己" = 4,
-    "庚" = 5,
-    "辛" = 6,
-    "壬" = 7,
-    "癸" = 8
+    "丁" = 3,
+    "戊" = 4,
+    "己" = 5,
+    "庚" = 6,
+    "辛" = 7,
+    "壬" = 8,
+    "癸" = 9
 }
 declare enum FIVE_ELEMENT {
     "金" = 0,
@@ -53,4 +54,12 @@ declare enum EARTH_SYMBOL_REVERSE {
     "亥" = 4,
     "酉" = 5
 }
-export { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE };
+declare enum SIX_ANIMALS {
+    "青龍" = 0,
+    "朱雀" = 1,
+    "勾塵" = 2,
+    "騰蛇" = 3,
+    "白虎" = 4,
+    "玄武" = 5
+}
+export { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE, SIX_ANIMALS };

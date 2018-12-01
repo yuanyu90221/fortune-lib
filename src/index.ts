@@ -1,4 +1,4 @@
-import {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL} from './enum_data';
+import {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, SIX_ANIMALS} from './enum_data';
 import {SYMBOL_CHAIN} from './symbolStruct';
 import * as symUtil from './symbolStruct';
 import {SIX_REL} from './sixRelative';
@@ -15,6 +15,8 @@ import * as OrderSetUtil from './orderSet';
 import UpBaseSet from './upBaseSet';
 import FortuneCS from './fortuneCS';
 import FourtuneNumMap from './fortuneNumMap';
+import getDateToEHSymbol from './timeUtil';
+import { getDateToEHSYM } from './timeUtil';
 /**
  * @description getFortuneResult
  * 
@@ -28,6 +30,11 @@ const getFortuneResult = ( inputSet:CoinSet[][], timestamp: number): object => {
   let downbase: object = {};
   let upbsSet = finalResult.getUpBsSet();
   let bsSet = finalResult.getbsSet();
+  let resultOfDateSym = getDateToEHSYM(timestamp);
+  let {earthSym, heavenSym} = resultOfDateSym;
+  
+  let sixAnimals: SIX_ANIMALS[] = setSixAnimals(heavenSym);
+  let sixAnimalsStrs: string[] = sixAnimals.map(animals=> SIX_ANIMALS[animals]); 
   upbase = setBasicBase(upbsSet);
   downbase = setBasicBase(bsSet);
   result = {
@@ -36,11 +43,45 @@ const getFortuneResult = ( inputSet:CoinSet[][], timestamp: number): object => {
     "fortuneNum": finalResult.getFortuneNum(),
     "event": finalResult.getEventNum(),
     "corEvent": finalResult.getCorEventNum(),
-    "mainElem": finalResult.getMainElement()
+    "mainElem": finalResult.getMainElement(),
+    "dateSymbol": HEAVEN_SYMBOL[heavenSym]+EARTH_SYMBOL[heavenSym],
+    "sixAnimal": sixAnimalsStrs
   }
   return result;
 };
-
+const setSixAnimals = (heavenElem: HEAVEN_SYMBOL): SIX_ANIMALS[] =>{
+  let resultAnimals: SIX_ANIMALS[]= [];
+  let startAnimal: SIX_ANIMALS = SIX_ANIMALS.青龍;
+  switch(heavenElem) {
+    case HEAVEN_SYMBOL.甲:
+    case HEAVEN_SYMBOL.乙:
+      startAnimal = SIX_ANIMALS.青龍;
+      break;
+    case HEAVEN_SYMBOL.丙:
+    case HEAVEN_SYMBOL.丁:
+      startAnimal = SIX_ANIMALS.朱雀;
+      break;
+    case HEAVEN_SYMBOL.戊:
+      startAnimal = SIX_ANIMALS.勾塵;
+      break;
+    case HEAVEN_SYMBOL.己:
+      startAnimal = SIX_ANIMALS.騰蛇;
+      break;
+    case HEAVEN_SYMBOL.庚:
+    case HEAVEN_SYMBOL.辛:
+      startAnimal = SIX_ANIMALS.白虎;
+      break;
+    default:
+      startAnimal = SIX_ANIMALS.玄武;
+      break;
+  }
+  for ( let idx =0; idx < 6; idx++ ){
+    startAnimal = (startAnimal+6)%6; 
+    resultAnimals.push(startAnimal);
+    startAnimal++;
+  }
+  return resultAnimals;
+};
 const setBasicBase = (baseSet: BaseSet): object => {
   let result: object = {};
   let movedSet = baseSet.getMovedSet();
@@ -68,10 +109,15 @@ const setBasicBase = (baseSet: BaseSet): object => {
   return result;
 };
 export { EARTH_SYMBOL,
-  OrderSetUtil, UpBaseSet,
+  OrderSetUtil, 
+  UpBaseSet,
   SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, symUtil,
   SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL, FourRES, FIVE_ELEMENT, BaseSet, EARTH_FIVE_MAP,
   EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE,
   FortuneCS, FourtuneNumMap,
-  getFortuneResult
+  getFortuneResult,
+  getDateToEHSymbol,
+  HEAVEN_SYMBOL,
+  SIX_ANIMALS,
+  getDateToEHSYM
 };

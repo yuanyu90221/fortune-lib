@@ -1,4 +1,4 @@
-import { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL } from './enum_data';
+import { EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, SIX_ANIMALS } from './enum_data';
 import { SYMBOL_CHAIN } from './symbolStruct';
 import * as symUtil from './symbolStruct';
 import { SIX_REL } from './sixRelative';
@@ -15,6 +15,8 @@ import * as OrderSetUtil from './orderSet';
 import UpBaseSet from './upBaseSet';
 import FortuneCS from './fortuneCS';
 import FourtuneNumMap from './fortuneNumMap';
+import getDateToEHSymbol from './timeUtil';
+import { getDateToEHSYM } from './timeUtil';
 /**
  * @description getFortuneResult
  *
@@ -22,4 +24,4 @@ import FourtuneNumMap from './fortuneNumMap';
  * @param {number} timestamp
  */
 declare const getFortuneResult: (inputSet: CoinSet[][], timestamp: number) => object;
-export { EARTH_SYMBOL, OrderSetUtil, UpBaseSet, SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, symUtil, SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL, FourRES, FIVE_ELEMENT, BaseSet, EARTH_FIVE_MAP, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE, FortuneCS, FourtuneNumMap, getFortuneResult };
+export { EARTH_SYMBOL, OrderSetUtil, UpBaseSet, SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, symUtil, SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL, FourRES, FIVE_ELEMENT, BaseSet, EARTH_FIVE_MAP, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE, FortuneCS, FourtuneNumMap, getFortuneResult, getDateToEHSymbol, HEAVEN_SYMBOL, SIX_ANIMALS, getDateToEHSYM };

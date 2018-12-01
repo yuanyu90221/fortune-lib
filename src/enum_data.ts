@@ -7,7 +7,7 @@ enum SIX_RELATIVE_SYMBOL{
 };
 
 enum HEAVEN_SYMBOL {
-  "甲", "乙", "丙", "戊", "己", "庚", "辛", "壬", "癸"
+  "甲", "乙", "丙", "丁", "戊", "己", "庚", "辛", "壬", "癸"
 };
 
 enum FIVE_ELEMENT {
@@ -21,4 +21,7 @@ enum EARTH_SYMBOL_REVERSE  {
   "未", "巳", "卯", "丑", "亥", "酉" 
 };
 
-export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE}; 
+enum SIX_ANIMALS {
+  "青龍", "朱雀", "勾塵", "騰蛇", "白虎", "玄武"
+}
+export {EARTH_SYMBOL, SIX_RELATIVE_SYMBOL, HEAVEN_SYMBOL, FIVE_ELEMENT, EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE, SIX_ANIMALS}; 
