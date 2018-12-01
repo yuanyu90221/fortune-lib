@@ -15,7 +15,12 @@ import * as OrderSetUtil from './orderSet';
 import UpBaseSet from './upBaseSet';
 import FortuneCS from './fortuneCS';
 import FourtuneNumMap from './fortuneNumMap';
-
+/**
+ * @description getFortuneResult
+ * 
+ * @param {CoinSet[][]} inputSet 
+ * @param {number} timestamp 
+ */
 const getFortuneResult = ( inputSet:CoinSet[][], timestamp: number): object => {
   let result:object = {};
   let finalResult: FortuneCS = new FortuneCS(inputSet);

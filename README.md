@@ -19,11 +19,18 @@
 ## 使用方式
 
 ```code
-import {SIX_REL, SIX_RELATIVE} from 'fortune-lib/lib';
+import {getFortuneResult, FaceSymbol, CoinSet} from 'fortune-lib/lib';
 
-let result = SIX_RELATIVE.antiVersal(SIX_REL[0], 1);
-console.log(SIX_REL[0].getSymbol()+ "剋" + result.getSymbol());
-let result1 = SIX_RELATIVE.transversal(SIX_REL[0], 1);
-console.log(SIX_REL[0].getSymbol()+ "生" + result1.getSymbol());
+let coSet6 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceDown, FaceSymbol.FaceDown]);
+let coSet5 = new CoinSet([FaceSymbol.FaceDown, FaceSymbol.FaceUp, FaceSymbol.FaceUp]);
+let coSet4 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceUp, FaceSymbol.FaceDown]);
+let upbsSet = [coSet6, coSet5, coSet4];
+let coSet3 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceDown, FaceSymbol.FaceDown]);
+let coSet2 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceUp, FaceSymbol.FaceUp]);
+let coSet1 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceUp, FaceSymbol.FaceDown]);
+let bsSet = [coSet3, coSet2, coSet1];
+
+let result: object = getFortuneResult([upbsSet, bsSet],1);
+console.log(JSON.stringify(result));
 
 ```
