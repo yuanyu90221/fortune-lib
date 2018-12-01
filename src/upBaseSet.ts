@@ -12,6 +12,17 @@ export default class upBaseSet extends BaseSet{
     let newEarthSYMs = this.getNext3EarthSYMs(first);
     this.getBasicSet().setEarthSYM(newEarthSYMs);
     this.getBasicSet().setFiveEles();
+    // console.log('movedSet: ', super.getMovedSet());
+  }
+
+  public getMovedSymbolabel(): string[] {
+    let movedSet = super.getMovedSet();
+    if (movedSet!=null){
+      return movedSet.getSymBolSetLabel();
+    } else {
+      console.log(`this movedSet is null`);
+      return [];
+    }
   }
 
   public getNext3EarthSYMs(first: EARTH_SYMBOL): EARTH_SYMBOL[] {

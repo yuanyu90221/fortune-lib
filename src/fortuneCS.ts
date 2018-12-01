@@ -113,13 +113,13 @@ export default class FortuneCS {
     return this.fortuneNum;
   }
 
-  public setMovedSixRes(bsSet: BaseSet) {
-    if (this.bsSet.checkMoved()) {
-      let bsMovedSet = this.bsSet.getMovedSet();
+  public setMovedSixRes(bsSet: BaseSet|upBaseSet) {
+    if (bsSet.checkMoved()) {
+      let bsMovedSet = bsSet.getMovedSet();
       if (bsMovedSet!=null){
         bsMovedSet.setupSixRes(this.checkSIXmap);
       }
-    }
+    } 
   }
 
   public switchSymbol(inputSymbols: CoinSymbol[]): CoinSymbol[] {

@@ -17,6 +17,7 @@ import FortuneCS from './fortuneCS';
 import FourtuneNumMap from './fortuneNumMap';
 import getDateToEHSymbol from './timeUtil';
 import { getDateToEHSYM } from './timeUtil';
+import upBaseSet from './upBaseSet';
 /**
  * @description getFortuneResult
  * 
@@ -43,7 +44,7 @@ const getFortuneResult = ( inputSet:CoinSet[][], timestamp: number): object => {
     "fortuneNum": finalResult.getFortuneNum(),
     "event": finalResult.getEventNum(),
     "corEvent": finalResult.getCorEventNum(),
-    "mainElem": finalResult.getMainElement(),
+    "mainElem": FIVE_ELEMENT[finalResult.getMainElement()],
     "dateSymbol": HEAVEN_SYMBOL[heavenSym]+EARTH_SYMBOL[heavenSym],
     "sixAnimal": sixAnimalsStrs
   }
@@ -82,7 +83,7 @@ const setSixAnimals = (heavenElem: HEAVEN_SYMBOL): SIX_ANIMALS[] =>{
   }
   return resultAnimals;
 };
-const setBasicBase = (baseSet: BaseSet): object => {
+const setBasicBase = (baseSet: BaseSet|upBaseSet): object => {
   let result: object = {};
   let movedSet = baseSet.getMovedSet();
   if (movedSet==null) {

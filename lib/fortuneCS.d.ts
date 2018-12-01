@@ -18,7 +18,7 @@ export default class FortuneCS {
     findEventPair(): void;
     setFortuneNum(): void;
     getFortuneNum(): number;
-    setMovedSixRes(bsSet: BaseSet): void;
+    setMovedSixRes(bsSet: BaseSet | upBaseSet): void;
     switchSymbol(inputSymbols: CoinSymbol[]): CoinSymbol[];
     setupSixMap(startElem: FIVE_ELEMENT): void;
     getMainElement(): FIVE_ELEMENT;
