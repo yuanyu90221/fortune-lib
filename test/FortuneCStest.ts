@@ -1,4 +1,4 @@
-import {CoinSet, CoinSymbol, FaceSymbol, FortuneCS} from '../lib/index';
+import {CoinSet, CoinSymbol, FaceSymbol, FortuneCS, FIVE_ELEMENT} from '../lib/index';
 
 
 test('testFourtuneCS', ()=> {
@@ -12,5 +12,12 @@ test('testFourtuneCS', ()=> {
   let bsSet = [coSet3, coSet2, coSet1];
   let fortuneResult: FortuneCS = new FortuneCS([upbsSet, bsSet]);
   console.log(fortuneResult.getUpBsSet().getBasicSet().getEarthSymBolSet());
+  console.log(FIVE_ELEMENT[fortuneResult.getMainElement()]);
   console.log(fortuneResult.getbsSet().getBasicSet().getEarthSymBolSet());
+  let bsMoveSet = fortuneResult.getbsSet().getMovedSet();
+  if (bsMoveSet!=null) {
+    console.log(bsMoveSet.getEarthSymBolSet());
+  }
+  console.log('世:' + fortuneResult.getEventNum());
+  console.log('應:' + fortuneResult.getCorEventNum());
 });

@@ -10,6 +10,7 @@ export default class FortuneCS {
   private bsSet: BaseSet; 
   private eventNum: number = 0;
   private corEventNum: number = 0;
+  private isReturnElement = false;
   private mainElement: FIVE_ELEMENT = FIVE_ELEMENT.金;
   constructor(coinSet: CoinSet[][]){
     let [upPart, downPart] = coinSet;
@@ -66,6 +67,7 @@ export default class FortuneCS {
       case "OXO":
         this.eventNum = 3;
         this.corEventNum = 6;
+        this.isReturnElement = true;
         break;
       default: 
         this.eventNum = 4;
@@ -77,7 +79,12 @@ export default class FortuneCS {
       case 2:
       case 3:
       case 6:
-        this.mainElement = this.upbsSet.getBasicSet().getMainElement();
+        if (this.isReturnElement) {
+          this.mainElement = this.bsSet.getBasicSet().getMainElement();
+        }
+        else {
+          this.mainElement = this.upbsSet.getBasicSet().getMainElement();
+        }
         break;
       case 4:
       case 5:

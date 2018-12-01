@@ -19,7 +19,7 @@
 ## 使用方式
 
 ```code
-import {SIX_REL, SIX_RELATIVE} from './lib';
+import {SIX_REL, SIX_RELATIVE} from 'fortune/lib';
 
 let result = SIX_RELATIVE.antiVersal(SIX_REL[0], 1);
 console.log(SIX_REL[0].getSymbol()+ "剋" + result.getSymbol());

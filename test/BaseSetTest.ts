@@ -3,7 +3,7 @@ import {BaseSet, FaceSymbol, CoinSet, FIVE_ELEMENT} from '../lib/index';
 test('TestBaseFlow', ()=>{
   let coSet1 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceDown, FaceSymbol.FaceDown]);
   let coSet2 = new CoinSet([FaceSymbol.FaceDown, FaceSymbol.FaceUp, FaceSymbol.FaceUp]);
-  let coSet3 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceDown, FaceSymbol.FaceUp]);
+  let coSet3 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceUp, FaceSymbol.FaceUp]);
   let orgSet = [coSet1, coSet2, coSet3];
   let bsSet = new BaseSet(orgSet);
   console.log(bsSet.getBasicSet().getEarthSymBolSet());

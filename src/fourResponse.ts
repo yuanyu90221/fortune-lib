@@ -27,13 +27,14 @@
  */
 import {CoinSymbol} from './coinSet';
 import {FIVE_EL} from './fiveElement';
-import {EARTH_SYMBOL, FIVE_ELEMENT} from './enum_data';
+import {EARTH_SYMBOL, FIVE_ELEMENT, SIX_RELATIVE_SYMBOL} from './enum_data';
 import * as EARTH_FIVE_MAP from './earthFiveMap';
 export default class FourRES {
   private symbolSet: CoinSymbol[];
   private earthSYM: EARTH_SYMBOL[] = [];
   private fiveElements: FIVE_ELEMENT[] = [];
   private mainElement: FIVE_ELEMENT = FIVE_ELEMENT.金;
+  private sixResSymbol: SIX_RELATIVE_SYMBOL[] = [];
   private isPos: boolean = false;
   constructor(symbolSet: CoinSymbol[]) {
     this.symbolSet = [...symbolSet];
@@ -57,11 +58,9 @@ export default class FourRES {
     return this.fiveElements;
   } 
 
-  public getFiveElesSYM(): string {
+  public getFiveElesSYM(): string[] {
     let fiveElementsStrs = this.fiveElements.map(item=>FIVE_ELEMENT[item]);
-    return fiveElementsStrs.reduce((curSYM, nextSYM)=>{
-      return curSYM+"->"+nextSYM;
-    });
+    return fiveElementsStrs;
   }
   
   classify(symbolSet: CoinSymbol[]) {
@@ -132,18 +131,14 @@ export default class FourRES {
     return this.symbolSet;
   }
 
-  public getSymBolSetLabel(): string {
+  public getSymBolSetLabel(): string[] {
     let symbolSetString = this.symbolSet.map(item=> CoinSymbol[item]);
-    return symbolSetString.reduce((itemCur, itemNext) => {
-      return itemCur + '->' +  itemNext;
-    });
+    return symbolSetString;
   }
 
-  public getEarthSymBolSet(): string {
+  public getEarthSymBolSet(): string[] {
     let symBolSetString = this.earthSYM.map(item=>{ return EARTH_SYMBOL[item]});
-    return symBolSetString.reduce((itemCur, itemNext)=>{
-      return itemCur + itemNext;
-    });
+    return symBolSetString;
   }
 
   public getEarthSYM(): EARTH_SYMBOL[] {

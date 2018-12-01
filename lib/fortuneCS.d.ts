@@ -8,6 +8,7 @@ export default class FortuneCS {
     private bsSet;
     private eventNum;
     private corEventNum;
+    private isReturnElement;
     private mainElement;
     constructor(coinSet: CoinSet[][]);
     getUpBsSet(): upBaseSet;
