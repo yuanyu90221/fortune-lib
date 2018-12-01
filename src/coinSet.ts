@@ -55,15 +55,15 @@ export default class CoinSet {
     return result;
   }
 
-  public getSymbol() {
+  public getSymbol():CoinSymbol {
     return this.coinSymbol;
   }
   
-  public getFaceSet() {
+  public getFaceSet():FaceSymbol[] {
     return this.faceSet;
   }
 
-  public getRealSymbol() {
+  public getRealSymbol(): CoinSymbol {
     let realSymbol: CoinSymbol = this.coinSymbol;
     switch(this.coinSymbol) {
       case CoinSymbol.O:
@@ -75,7 +75,7 @@ export default class CoinSet {
     }
   }
 
-  public getMoveSymbol() {
+  public getMoveSymbol(): CoinSymbol {
     let realSymbol: CoinSymbol = this.coinSymbol;
     switch(this.coinSymbol) {
       case CoinSymbol.O: 

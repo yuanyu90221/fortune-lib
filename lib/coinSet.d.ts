@@ -30,7 +30,7 @@ export default class CoinSet {
     private setSymbol;
     getSymbol(): CoinSymbol;
     getFaceSet(): FaceSymbol[];
-    getRealSymbol(): CoinSymbol.X | CoinSymbol.| | CoinSymbol;
-    getMoveSymbol(): CoinSymbol.X | CoinSymbol.| | CoinSymbol;
+    getRealSymbol(): CoinSymbol;
+    getMoveSymbol(): CoinSymbol;
 }
 export { CoinSymbol, FaceSymbol };
