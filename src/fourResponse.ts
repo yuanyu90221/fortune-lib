@@ -83,7 +83,7 @@ export default class FourRES {
         this.mainElement = FIVE_ELEMENT.水;
         this.isPos = true;
         break;
-      case CoinSymbol["|"] + "" + CoinSymbol["|"] + ""+CoinSymbol["||"]:
+      case CoinSymbol["||"] + "" + CoinSymbol["||"] + ""+CoinSymbol["|"]:
         this.earthSYM.push(EARTH_SYMBOL.辰);
         this.earthSYM.push(EARTH_SYMBOL.寅);
         this.earthSYM.push(EARTH_SYMBOL.子);
