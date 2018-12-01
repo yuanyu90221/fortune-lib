@@ -79,7 +79,7 @@ export default class FourRES {
       return SIX_RELATIVE_SYMBOL[item];
     });
   }
-  
+
   public classify(symbolSet: CoinSymbol[]) {
     let [first, second, third] = symbolSet;
     let conditionText = first + "" + second + "" + third;
@@ -147,7 +147,7 @@ export default class FourRES {
   public getSymBolSet(): CoinSymbol[] {
     return this.symbolSet;
   }
-
+  
   public getSymBolSetLabel(): string[] {
     let symbolSetString = this.symbolSet.map(item=> CoinSymbol[item]);
     return symbolSetString;

@@ -23,5 +23,8 @@ test('testFourtuneCS', ()=> {
   }
   console.log('世:' + fortuneResult.getEventNum());
   console.log('應:' + fortuneResult.getCorEventNum());
-  
+  console.log(fortuneResult.getUpBsSet().getRealSetSymbolStr());
+  console.log(fortuneResult.getbsSet().getRealSetSymbolStr());
+
+  console.log('掛數:' + fortuneResult.getFortuneNum());
 });

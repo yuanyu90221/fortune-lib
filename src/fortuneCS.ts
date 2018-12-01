@@ -4,7 +4,7 @@ import CoinSet from './coinSet';
 import {CoinSymbol} from './coinSet';
 import {FIVE_ELEMENT, SIX_RELATIVE_SYMBOL} from './enum_data';
 import FourRES  from './fourResponse';
-
+import FortuneNumMap from './fortuneNumMap';
 export default class FortuneCS {
   private upbsSet: upBaseSet; 
   private bsSet: BaseSet; 
@@ -13,6 +13,7 @@ export default class FortuneCS {
   private isReturnElement = false;
   private mainElement: FIVE_ELEMENT = FIVE_ELEMENT.金;
   private checkSIXmap: any = {};
+  private fortuneNum: number = 0;
   constructor(coinSet: CoinSet[][]){
     let [upPart, downPart] = coinSet;
     this.upbsSet = new upBaseSet(upPart);
@@ -100,6 +101,16 @@ export default class FortuneCS {
     this.upbsSet.getBasicSet().setupSixRes(this.checkSIXmap);
     this.setMovedSixRes(this.bsSet);
     this.setMovedSixRes(this.upbsSet);
+    this.setFortuneNum();
+  }
+
+  public setFortuneNum():void {
+    let setSymbolsStr = this.upbsSet.getRealSetSymbolStr() + this.bsSet.getRealSetSymbolStr();
+    this.fortuneNum = FortuneNumMap[setSymbolsStr];
+  }
+  
+  public getFortuneNum():number {
+    return this.fortuneNum;
   }
 
   public setMovedSixRes(bsSet: BaseSet) {

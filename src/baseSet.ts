@@ -34,6 +34,13 @@ export default class BaseSet {
     return this.realSetSymbol;
   }
 
+  public getRealSetSymbolStr(): string {
+    let realSymbol: string[] = this.realSetSymbol.map(item => item+"");
+    return realSymbol.reduce((curItem, nextItem)=> {
+      return curItem+nextItem;
+    });
+  }
+
   public getMovedSetSymbol(): CoinSymbol[] {
     return this.movedSetSymbol;
   }

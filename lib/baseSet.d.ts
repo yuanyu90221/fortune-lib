@@ -12,6 +12,7 @@ export default class BaseSet {
     checkMoved(): boolean;
     getOrigSetSymbol(): CoinSymbol[];
     getRealSetSymbol(): CoinSymbol[];
+    getRealSetSymbolStr(): string;
     getMovedSetSymbol(): CoinSymbol[];
     getBasicSet(): FourRES;
     getMovedSet(): FourRES | null;
