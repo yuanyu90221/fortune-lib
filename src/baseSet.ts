@@ -30,6 +30,20 @@ export default class BaseSet {
     return this.orgSetSymbol;
   }
 
+  public getOrigSetSymbolLabel(): string[] {
+    return this.getOrigSetSymbol().map(item=> {
+      return CoinSymbol[item];
+    });
+  }
+
+  public getMovedSymbolabel(): string[] {
+    let movedSet = this.movedSet;
+    if (movedSet!=null){
+      return movedSet.getSymBolSetLabel();
+    } else {
+      return [];
+    }
+  }
   public getRealSetSymbol(): CoinSymbol[] {
     return this.realSetSymbol;
   }

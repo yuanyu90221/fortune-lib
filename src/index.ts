@@ -15,10 +15,58 @@ import * as OrderSetUtil from './orderSet';
 import UpBaseSet from './upBaseSet';
 import FortuneCS from './fortuneCS';
 import FourtuneNumMap from './fortuneNumMap';
+
+const getFortuneResult = ( inputSet:CoinSet[][], timestamp: number): object => {
+  let result:object = {};
+  let finalResult: FortuneCS = new FortuneCS(inputSet);
+  let upbase: object = {};
+  let downbase: object = {};
+  let upbsSet = finalResult.getUpBsSet();
+  let bsSet = finalResult.getbsSet();
+  upbase = setBasicBase(upbsSet);
+  downbase = setBasicBase(bsSet);
+  result = {
+    "upbase": upbase,
+    "downbase": downbase,
+    "fortuneNum": finalResult.getFortuneNum(),
+    "event": finalResult.getEventNum(),
+    "corEvent": finalResult.getCorEventNum(),
+    "mainElem": finalResult.getMainElement()
+  }
+  return result;
+};
+
+const setBasicBase = (baseSet: BaseSet): object => {
+  let result: object = {};
+  let movedSet = baseSet.getMovedSet();
+  if (movedSet==null) {
+    result = {
+      "earthSym": baseSet.getBasicSet().getEarthSymBolSet(),
+      "fiveElem": baseSet.getBasicSet().getFiveElesSYM(),
+      "sixRes": baseSet.getBasicSet().getSixResSymLabel(),
+      "base": baseSet.getOrigSetSymbolLabel()
+    }
+  } else {
+    result = {
+      "earthSym": baseSet.getBasicSet().getEarthSymBolSet(),
+      "fiveElem": baseSet.getBasicSet().getFiveElesSYM(),
+      "sixRes": baseSet.getBasicSet().getSixResSymLabel(),
+      "base": baseSet.getOrigSetSymbolLabel(),
+      "movebase": {
+        "earthSym": movedSet.getEarthSymBolSet(),
+        "fiveElem": movedSet.getFiveElesSYM(),
+        "sixRes": movedSet.getSixResSymLabel(),
+        "base": baseSet.getMovedSymbolabel(), 
+      }
+    }
+  }
+  return result;
+};
 export { EARTH_SYMBOL,
   OrderSetUtil, UpBaseSet,
   SIX_RELATIVE_SYMBOL, SYMBOL_CHAIN, symUtil,
   SIX_RELATIVE, SIX_REL, CoinSet, CoinSymbol, FaceSymbol, FIVE_ELM, FIVE_EL, FourRES, FIVE_ELEMENT, BaseSet, EARTH_FIVE_MAP,
   EARTH_SYMBOL_ORDER, EARTH_SYMBOL_REVERSE,
-  FortuneCS, FourtuneNumMap
+  FortuneCS, FourtuneNumMap,
+  getFortuneResult
 };

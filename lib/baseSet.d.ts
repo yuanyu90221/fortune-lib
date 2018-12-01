@@ -11,6 +11,8 @@ export default class BaseSet {
     constructor(orgSet: CoinSet[]);
     checkMoved(): boolean;
     getOrigSetSymbol(): CoinSymbol[];
+    getOrigSetSymbolLabel(): string[];
+    getMovedSymbolabel(): string[];
     getRealSetSymbol(): CoinSymbol[];
     getRealSetSymbolStr(): string;
     getMovedSetSymbol(): CoinSymbol[];
