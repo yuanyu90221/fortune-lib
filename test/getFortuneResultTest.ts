@@ -9,6 +9,6 @@ test('testFortuneLib', ()=>{
   let coSet2 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceUp, FaceSymbol.FaceUp]);
   let coSet1 = new CoinSet([FaceSymbol.FaceUp, FaceSymbol.FaceUp, FaceSymbol.FaceDown]);
   let bsSet = [coSet3, coSet2, coSet1];
-  let result: object = getFortuneResult([upbsSet, bsSet], moment().unix());
+  let result: object = getFortuneResult([upbsSet, bsSet], moment().unix() * 1000);
   console.log(JSON.stringify(result));
 });
