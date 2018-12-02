@@ -1,6 +1,9 @@
 import symbolWord from './symbolWord';
 import {EARTH_SYMBOL} from './enum_data';
 const WORDSET_LEN = 12;
+/**
+ * 地支循序表
+ */
 const SYMBOL_CHAIN: Array<symbolWord> = [];
 for (let i = 0 ; i < WORDSET_LEN; i++) {
   let currentWord = new symbolWord({symbol: EARTH_SYMBOL[i]});

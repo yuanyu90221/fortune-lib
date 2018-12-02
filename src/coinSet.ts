@@ -23,8 +23,18 @@ enum FaceSymbol {
   FaceDown,
   FaceUp
 };
+/**
+ * @description CoinSet 基礎掛 物件
+ * @author jsonLiang
+ */
 export default class CoinSet {
+  /**
+   * 銅錢正反面
+   */
   private faceSet: FaceSymbol[] = [];
+  /**
+   * 對應卦象
+   */
   private coinSymbol: CoinSymbol;  
   constructor(faceSet: FaceSymbol[]){
     if (faceSet.length !== 3) {

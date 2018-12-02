@@ -29,12 +29,34 @@ import {CoinSymbol} from './coinSet';
 import {FIVE_EL} from './fiveElement';
 import {EARTH_SYMBOL, FIVE_ELEMENT, SIX_RELATIVE_SYMBOL} from './enum_data';
 import * as EARTH_FIVE_MAP from './earthFiveMap';
+/**
+ * @description FourRES 卦象基礎物件
+ * @author jsonLiang
+ */
 export default class FourRES {
+  /**
+   * 基礎卦元
+   */
   private symbolSet: CoinSymbol[];
+  /**
+   * 地支對應
+   */
   private earthSYM: EARTH_SYMBOL[] = [];
+  /**
+   * 五行對應
+   */
   private fiveElements: FIVE_ELEMENT[] = [];
+  /**
+   * 本宮對應
+   */
   private mainElement: FIVE_ELEMENT = FIVE_ELEMENT.金;
+  /**
+   * 六親對應
+   */
   private sixResSymbol: SIX_RELATIVE_SYMBOL[] = [];
+  /**
+   * 是否為四陽
+   */
   private isPos: boolean = false;
   constructor(symbolSet: CoinSymbol[]) {
     this.symbolSet = [...symbolSet];

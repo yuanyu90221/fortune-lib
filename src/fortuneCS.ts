@@ -5,14 +5,42 @@ import {CoinSymbol} from './coinSet';
 import {FIVE_ELEMENT, SIX_RELATIVE_SYMBOL} from './enum_data';
 import FourRES  from './fourResponse';
 import FortuneNumMap from './fortuneNumMap';
+/**
+ * @description FortuneCS 功能物件
+ * @author jsonLiang
+ */
 export default class FortuneCS {
+  /**
+   * 上掛
+   */
   private upbsSet: upBaseSet; 
-  private bsSet: BaseSet; 
+  /**
+   * 下掛
+   */
+  private bsSet: BaseSet;
+  /**
+   * 世:掛數 
+   */ 
   private eventNum: number = 0;
+  /**
+   * 應:掛數
+   */
   private corEventNum: number = 0;
+  /**
+   * 是否為歸魂掛
+   */
   private isReturnElement = false;
+  /**
+   * 本宮
+   */
   private mainElement: FIVE_ELEMENT = FIVE_ELEMENT.金;
+  /**
+   * 六親對應五行表(動態生成)
+   */
   private checkSIXmap: any = {};
+  /**
+   * 掛數對應64掛
+   */
   private fortuneNum: number = 0;
   constructor(coinSet: CoinSet[][]){
     let [upPart, downPart] = coinSet;
@@ -29,6 +57,9 @@ export default class FortuneCS {
     return this.bsSet;
   }
 
+  /**
+   * @description findEventPair 設定世應
+   */
   public findEventPair() {
     let upBaseSymbol: CoinSymbol[] = this.upbsSet.getRealSetSymbol();
     let baseSymbol: CoinSymbol[] = this.bsSet.getRealSetSymbol();
@@ -69,7 +100,7 @@ export default class FortuneCS {
       case "OXO":
         this.eventNum = 3;
         this.corEventNum = 6;
-        this.isReturnElement = true;
+        this.isReturnElement = true; //歸魂掛
         break;
       default: 
         this.eventNum = 4;
@@ -103,7 +134,9 @@ export default class FortuneCS {
     this.setMovedSixRes(this.upbsSet);
     this.setFortuneNum();
   }
-
+  /**
+   * @description setFortuneNum
+   */
   public setFortuneNum():void {
     let setSymbolsStr = this.upbsSet.getRealSetSymbolStr() + this.bsSet.getRealSetSymbolStr();
     this.fortuneNum = FortuneNumMap[setSymbolsStr];
@@ -112,7 +145,11 @@ export default class FortuneCS {
   public getFortuneNum():number {
     return this.fortuneNum;
   }
-
+  /**
+   * @description setMovedSixRes 設定動爻六親
+   * 
+   * @param {BaseSet|upBaseSet} bsSet 
+   */
   public setMovedSixRes(bsSet: BaseSet|upBaseSet) {
     if (bsSet.checkMoved()) {
       let bsMovedSet = bsSet.getMovedSet();
@@ -121,7 +158,11 @@ export default class FortuneCS {
       }
     } 
   }
-
+  /**
+   * @description switchSymbol 反轉掛
+   * 
+   * @param {CoinSymbol[]} inputSymbols 
+   */
   public switchSymbol(inputSymbols: CoinSymbol[]): CoinSymbol[] {
     return inputSymbols.map(item => {
       switch(item) {

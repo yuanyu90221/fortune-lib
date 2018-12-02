@@ -19,7 +19,7 @@ import getDateToEHSymbol from './timeUtil';
 import { getDateToEHSYM } from './timeUtil';
 import upBaseSet from './upBaseSet';
 /**
- * @description getFortuneResult
+ * @description getFortuneResult 算命函數
  * 
  * @param {CoinSet[][]} inputSet 
  * @param {number} timestamp 
@@ -83,6 +83,11 @@ const setSixAnimals = (heavenElem: HEAVEN_SYMBOL): SIX_ANIMALS[] =>{
   }
   return resultAnimals;
 };
+/**
+ * @description setBasicBase 設定基礎回應
+ * 
+ * @param {BaseSet|upBaseSet} baseSet 
+ */
 const setBasicBase = (baseSet: BaseSet|upBaseSet): object => {
   let result: object = {};
   let movedSet = baseSet.getMovedSet();

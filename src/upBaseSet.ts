@@ -4,6 +4,10 @@ import { EARTH_SYMBOL } from './enum_data';
 import * as OrderSetUtil from './orderSet';
 import CoinSet from './coinSet';
 import BaseSet from './baseSet';
+/**
+ * @description upBaseSet 上掛
+ * @author jsonLiang
+ */
 export default class upBaseSet extends BaseSet{
 
   constructor(orgSet: CoinSet[]) {
@@ -12,19 +16,12 @@ export default class upBaseSet extends BaseSet{
     let newEarthSYMs = this.getNext3EarthSYMs(first);
     this.getBasicSet().setEarthSYM(newEarthSYMs);
     this.getBasicSet().setFiveEles();
-    // console.log('movedSet: ', super.getMovedSet());
   }
-
-  public getMovedSymbolabel(): string[] {
-    let movedSet = super.getMovedSet();
-    if (movedSet!=null){
-      return movedSet.getSymBolSetLabel();
-    } else {
-      console.log(`this movedSet is null`);
-      return [];
-    }
-  }
-
+  /**
+   * @description getNext3EarthSYMs
+   * 
+   * @param {EARTH_SYMBOL} first 
+   */
   public getNext3EarthSYMs(first: EARTH_SYMBOL): EARTH_SYMBOL[] {
     let newEARTHSYMs: EARTH_SYMBOL[] = [];
     let pushedSYM: EARTH_SYMBOL = first;

@@ -1,4 +1,7 @@
 import symbolWord from './symbolWord';
+/**
+ * 地支循序表
+ */
 declare const SYMBOL_CHAIN: Array<symbolWord>;
 /**
  * @description transversal

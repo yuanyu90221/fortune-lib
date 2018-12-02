@@ -1,4 +1,7 @@
 import {FIVE_ELEMENT, EARTH_SYMBOL} from './enum_data';
+/***
+ * 地支對應五行
+ */
 const EARTH_FIVE_MAP:any = {};
 EARTH_FIVE_MAP[EARTH_SYMBOL.子] = FIVE_ELEMENT.水;
 EARTH_FIVE_MAP[EARTH_SYMBOL.丑] = FIVE_ELEMENT.土;
@@ -12,9 +15,19 @@ EARTH_FIVE_MAP[EARTH_SYMBOL.申] = FIVE_ELEMENT.金;
 EARTH_FIVE_MAP[EARTH_SYMBOL.酉] = FIVE_ELEMENT.金;
 EARTH_FIVE_MAP[EARTH_SYMBOL.戌] = FIVE_ELEMENT.土;
 EARTH_FIVE_MAP[EARTH_SYMBOL.亥] = FIVE_ELEMENT.水;
+/**
+ * @description getFiveFromMap
+ * 
+ * @param {EARTH_SYMBOL} earthSYM 
+ */
 const getFiveFromMap = (earthSYM: EARTH_SYMBOL): FIVE_ELEMENT => {
   return EARTH_FIVE_MAP[earthSYM];
 };
+/**
+ * @description getVFiveSymbolFromMap
+ * 
+ * @param {EARTH_SYMBOL} earthSYM 
+ */
 const getFiveSymbolFromMap = (earthSYM: EARTH_SYMBOL): string => {
   return FIVE_ELEMENT[EARTH_FIVE_MAP[earthSYM]];
 };

@@ -18,7 +18,7 @@ import FourtuneNumMap from './fortuneNumMap';
 import getDateToEHSymbol from './timeUtil';
 import { getDateToEHSYM } from './timeUtil';
 /**
- * @description getFortuneResult
+ * @description getFortuneResult 算命函數
  *
  * @param {CoinSet[][]} inputSet
  * @param {number} timestamp

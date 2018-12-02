@@ -1,7 +1,19 @@
+/**
+ * @description symbolWord
+ * @author jsonLiang
+ */
 export default class symbolWord {
-
+  /**
+   * 符號
+   */
   private symbol: string = '';
+  /**
+   * 反向指標
+   */
   private reverse: any;
+  /**
+   * 正向指標
+   */
   private order: any;
   constructor({symbol='', reverse = {}, order = {}}) {
     this.symbol = symbol;

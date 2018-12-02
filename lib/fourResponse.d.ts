@@ -27,12 +27,34 @@
  */
 import { CoinSymbol } from './coinSet';
 import { EARTH_SYMBOL, FIVE_ELEMENT, SIX_RELATIVE_SYMBOL } from './enum_data';
+/**
+ * @description FourRES 卦象基礎物件
+ * @author jsonLiang
+ */
 export default class FourRES {
+    /**
+     * 基礎卦元
+     */
     private symbolSet;
+    /**
+     * 地支對應
+     */
     private earthSYM;
+    /**
+     * 五行對應
+     */
     private fiveElements;
+    /**
+     * 本宮對應
+     */
     private mainElement;
+    /**
+     * 六親對應
+     */
     private sixResSymbol;
+    /**
+     * 是否為四陽
+     */
     private isPos;
     constructor(symbolSet: CoinSymbol[]);
     setEarthSYM(earthSYMs: EARTH_SYMBOL[]): void;

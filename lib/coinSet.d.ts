@@ -23,8 +23,18 @@ declare enum FaceSymbol {
     FaceDown = 0,
     FaceUp = 1
 }
+/**
+ * @description CoinSet 基礎掛 物件
+ * @author jsonLiang
+ */
 export default class CoinSet {
+    /**
+     * 銅錢正反面
+     */
     private faceSet;
+    /**
+     * 對應卦象
+     */
     private coinSymbol;
     constructor(faceSet: FaceSymbol[]);
     private setSymbol;

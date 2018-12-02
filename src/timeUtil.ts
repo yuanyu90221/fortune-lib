@@ -26,6 +26,11 @@ interface EARTH_HEAVEN_TYPE {
   earthSym: EARTH_SYMBOL,
   heavenSym: HEAVEN_SYMBOL
 };
+/**
+ * @description getDateToEHSYM
+ * 
+ * @param {number} timestamp 
+ */
 const getDateToEHSYM= (timestamp: number): EARTH_HEAVEN_TYPE => {
   let resultEHSymbol:EARTH_HEAVEN_TYPE;
   let inputTime = moment(timestamp);

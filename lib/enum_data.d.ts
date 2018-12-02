@@ -1,3 +1,6 @@
+/**
+ * 地支
+ */
 declare enum EARTH_SYMBOL {
     "子" = 0,
     "丑" = 1,
@@ -12,6 +15,9 @@ declare enum EARTH_SYMBOL {
     "戌" = 10,
     "亥" = 11
 }
+/**
+ * 六親
+ */
 declare enum SIX_RELATIVE_SYMBOL {
     "父" = 0,
     "兄" = 1,
@@ -19,6 +25,9 @@ declare enum SIX_RELATIVE_SYMBOL {
     "才" = 3,
     "官" = 4
 }
+/**
+ * 天干
+ */
 declare enum HEAVEN_SYMBOL {
     "甲" = 0,
     "乙" = 1,
@@ -31,6 +40,9 @@ declare enum HEAVEN_SYMBOL {
     "壬" = 8,
     "癸" = 9
 }
+/**
+ * 五行
+ */
 declare enum FIVE_ELEMENT {
     "金" = 0,
     "水" = 1,
@@ -38,6 +50,9 @@ declare enum FIVE_ELEMENT {
     "火" = 3,
     "土" = 4
 }
+/**
+ * 順向 上掛推定
+ */
 declare enum EARTH_SYMBOL_ORDER {
     "子" = 0,
     "寅" = 1,
@@ -46,6 +61,9 @@ declare enum EARTH_SYMBOL_ORDER {
     "申" = 4,
     "戌" = 5
 }
+/**
+ * 逆向 上掛推定
+ */
 declare enum EARTH_SYMBOL_REVERSE {
     "未" = 0,
     "巳" = 1,
@@ -54,6 +72,9 @@ declare enum EARTH_SYMBOL_REVERSE {
     "亥" = 4,
     "酉" = 5
 }
+/**
+ * 六獸
+ */
 declare enum SIX_ANIMALS {
     "青龍" = 0,
     "朱雀" = 1,
