@@ -46,9 +46,55 @@ const getFortuneResult = ( inputSet:CoinSet[][], timestamp: number): object => {
     "corEvent": finalResult.getCorEventNum(),
     "mainElem": FIVE_ELEMENT[finalResult.getMainElement()],
     "dateSymbol": HEAVEN_SYMBOL[heavenSym]+EARTH_SYMBOL[heavenSym],
-    "sixAnimal": sixAnimalsStrs
+    "sixAnimal": sixAnimalsStrs,
+    "movedNum": judgeMovedSet(bsSet, upbsSet)
   }
   return result;
+};
+interface moveBase {
+  index: number,
+  isNeg: boolean
+};
+/**
+ * @description judgeMovedSet
+ * 
+ * @param baseSet baseSet 下爻
+ * @param upBaseSet upBaseSEt 下爻
+ */
+const judgeMovedSet = (baseSet: BaseSet, upBaseSet: upBaseSet ): (null|number)=>{
+  let resultNum: null | number = null;
+  let upMovedSet = upBaseSet.getMovedSet();
+  let downMovedSet = baseSet.getMovedSet();
+  let upperBase = upBaseSet.getOrigSetSymbolLabel();
+  let downBase = baseSet.getOrigSetSymbolLabel();
+  let upResultArr:Array<moveBase> = [];
+  let downresultArr:Array<moveBase> = [];
+  let finalResultArr:Array<moveBase> = [];
+  if (upMovedSet!==null) {
+    upResultArr = upperBase.filter((item, index)=> {
+      return item == CoinSymbol[CoinSymbol.O] || item == CoinSymbol[CoinSymbol.X];
+    }).map((item, index)=> {
+      return {
+        index: index+4,
+        isNeg: item == CoinSymbol[CoinSymbol.X]
+      }
+    });
+  }
+  if (downMovedSet!==null) {
+    downresultArr = downBase.filter((item, index)=> {
+      return item == CoinSymbol[CoinSymbol.O] || item == CoinSymbol[CoinSymbol.X];
+    }).map((item, index)=> {
+      return {
+        index: index+1,
+        isNeg: item == CoinSymbol[CoinSymbol.X]
+      }
+    });
+  }
+  finalResultArr = [...upResultArr, ...downresultArr];
+  if (finalResultArr.length > 0 && finalResultArr.length <= 2) {
+    resultNum = finalResultArr[finalResultArr.length-1].index;
+  }
+  return resultNum;
 };
 const setSixAnimals = (heavenElem: HEAVEN_SYMBOL): SIX_ANIMALS[] =>{
   let resultAnimals: SIX_ANIMALS[]= [];
