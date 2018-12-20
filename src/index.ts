@@ -75,7 +75,7 @@ const judgeMovedSet = (baseSet: BaseSet, upBaseSet: upBaseSet ): (null|number)=>
       return item == CoinSymbol[CoinSymbol.O] || item == CoinSymbol[CoinSymbol.X];
     }).map((item, index)=> {
       return {
-        index: index+4,
+        index: 6-index,
         isNeg: item == CoinSymbol[CoinSymbol.X]
       }
     });
@@ -85,7 +85,7 @@ const judgeMovedSet = (baseSet: BaseSet, upBaseSet: upBaseSet ): (null|number)=>
       return item == CoinSymbol[CoinSymbol.O] || item == CoinSymbol[CoinSymbol.X];
     }).map((item, index)=> {
       return {
-        index: index+1,
+        index: 3-index,
         isNeg: item == CoinSymbol[CoinSymbol.X]
       }
     });
