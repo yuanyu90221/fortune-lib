@@ -1,6 +1,6 @@
 # fortune-lib
 
-## 套件介紹
+## 套件介紹
 
 + 一個用typescript 撰寫的 排掛 library
 
@@ -8,7 +8,7 @@
 
 `npm i`
 
-## 執行測試
+## 執行測試
 
 `npm run test ${執行名稱}`
 
